@@ -49,11 +49,11 @@ aboutus_doc = text_splitter.split_documents(aboutus_txt)
 # =========================
 # Vector DB
 # =========================
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
 
-embeddings = HuggingFaceEmbeddings(
-    model_name="all-MiniLM-L6-v2"
+embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/text-embedding-004"
 )
 
 firstdb = Chroma.from_documents(
@@ -97,7 +97,7 @@ tools = [
 from langgraph.prebuilt import create_react_agent
 
 agent = create_react_agent(
-    model=llmgoogle,
+    model=llmmodel,
     tools=tools,
     prompt="""
     You are a cake shop assistant.

@@ -4,11 +4,9 @@ python-dotenv
 langchain
 langchain-community
 langchain-text-splitters
-langchain-huggingface
 langchain-chroma
 langgraph
 chromadb
-sentence-transformers
 google-genai
 groq
 langchain-google-genai
