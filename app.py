@@ -53,7 +53,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
 
 embeddings = GoogleGenerativeAIEmbeddings(
-    model="models/text-embedding-004"
+    model="models/gemini-embedding-001"
 )
 
 firstdb = Chroma.from_documents(
@@ -106,9 +106,9 @@ agent = create_react_agent(
     """
 )
 
-from fastapi import FastAPI
-from pydantic import BaseModel
-
+# =========================
+# FastAPI App
+# =========================
 app = FastAPI(title="Cake Shop Chatbot API")
 
 class ChatRequest(BaseModel):
