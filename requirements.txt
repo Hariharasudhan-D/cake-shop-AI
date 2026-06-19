@@ -11,3 +11,5 @@ chromadb
 sentence-transformers
 google-genai
 groq
+langchain-google-genai
+langchain-groq
