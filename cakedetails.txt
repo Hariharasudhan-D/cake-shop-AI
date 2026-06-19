@@ -1,0 +1,207 @@
+GEETHUS CORNER — CAKE MENU & PRODUCT KNOWLEDGE BASE
+(Reference document for chatbot / RAG knowledge base use)
+
+=====================================================
+NOTES FOR THE DEVELOPER — PLEASE READ BEFORE DEPLOYING
+=====================================================
+1. Currency: All prices are in Indian Rupees (₹).
+2. Sizes: The original menu listed two prices per cake with no size labels printed on it. Based on standard Indian bakery pricing (and the fact that almost every second price is exactly half the first), this file assumes the first price is for a 1 kg cake and the second is for a 500 g (half kg) cake. Please confirm this with the shop and correct it here if it is actually something else (e.g. different sizes, or "with card/topper" vs "without").
+3. Ingredients and "how it's made" notes below describe the TYPICAL, standard recipe for each cake type, based on common bakery practice and reference recipes. They are NOT the confirmed, exact proprietary recipe used by Geethus Corner. Before this file is used in a live, customer-facing chatbot, please review and correct these — especially anything related to allergens (egg vs. eggless, nuts, dairy, gluten) — so the bot never gives a customer inaccurate allergy information.
+4. The 4-hour minimum order lead time below is written based on what was specified for this project. Update it if the real policy is different.
+5. Suggested use: this file can be fed directly into your RAG pipeline. Each cake entry is self-contained (name, price, ingredients, preparation, notes) and separated by "---" so it can be chunked one entry per record if you'd like finer-grained retrieval.
+
+=====================================================
+BUSINESS & ORDERING INFORMATION
+=====================================================
+Business Name: Geethus Corner
+Category: Custom cake shop / bakery
+Available Sizes: 1 kg and 500 g (half kg) for most flavors
+Minimum Order Lead Time: 4 hours. Customers must place their order at least 4 hours before the time they need the cake. Orders placed with less than 4 hours' notice cannot be guaranteed.
+Signature / Must-Try Items: Death by Chocolate, Rasamalai Cake (signature item), Rosemilk Cake
+
+=====================================================
+FREQUENTLY ASKED QUESTIONS
+=====================================================
+Q: How far in advance do I need to place my cake order?
+A: Please place your order at least 4 hours before you need the cake. Orders placed with less than 4 hours' notice cannot be guaranteed.
+
+Q: What sizes do your cakes come in?
+A: Most cakes are available in 1 kg and 500 g (half kg) sizes. See the price for each flavor below.
+
+Q: What's in a particular cake / what are the ingredients?
+A: Ingredients vary by flavor — see the "Ingredients" line under that cake's entry below. Please mention any allergies (nuts, eggs, dairy, gluten) when ordering.
+
+Q: Do you have eggless cakes?
+A: Please contact Geethus Corner directly to confirm eggless availability, as this can vary by flavor.
+
+Q: Which cakes are the most recommended / popular?
+A: Death by Chocolate, Rasamalai Cake (our signature item), and Rosemilk Cake are highlighted as must-try flavors.
+
+=====================================================
+CAKE FLAVOR DETAILS
+=====================================================
+
+--- Vanilla Cake ---
+Price (1 kg): ₹500
+Price (500 g): ₹250
+Ingredients: Refined flour (maida), sugar, butter, eggs (or an eggless alternative), milk, vanilla extract/essence, baking powder, fresh whipped cream or buttercream frosting.
+How it's made: A classic vanilla sponge is baked and layered with vanilla whipped cream or buttercream, then finished with a smooth outer coat of cream.
+Notes: The simplest, most classic flavor on the menu; a good base for customization.
+
+--- Milk Cake with Strawberry Topping ---
+Price (1 kg): ₹600
+Price (500 g): ₹300
+Ingredients: Vanilla sponge, sweetened milk-soaking mixture (milk and condensed milk), fresh cream, strawberry compote or fresh strawberry topping, sugar.
+How it's made: A soft sponge is soaked in a sweetened milk mixture for extra moistness, then layered and topped with fresh cream and a strawberry compote or fresh strawberry topping.
+Notes: Known for its moist, milky texture balanced by a fruity strawberry finish.
+
+--- Black Forest Cake ---
+Price (1 kg): ₹700
+Price (500 g): ₹350
+Ingredients: Chocolate sponge cake, fresh whipped cream, cherries (fresh, tinned, or compote), chocolate shavings.
+How it's made: Layers of chocolate sponge are stacked with whipped cream and cherries, then finished with a whipped cream coat and chocolate shavings on top.
+Notes: A globally popular classic, originally German in origin.
+
+--- White Forest Cake ---
+Price (1 kg): ₹750
+Price (500 g): ₹350
+Ingredients: Vanilla sponge cake, fresh whipped cream, cherries, white chocolate shavings.
+How it's made: Made the same way as Black Forest but with a vanilla sponge instead of chocolate, layered with whipped cream and cherries, and topped with white chocolate shavings.
+Notes: A lighter-colored variation of the Black Forest cake.
+
+--- Red Velvet Cake ---
+Price (1 kg): ₹1000
+Price (500 g): ₹500
+Ingredients: Flour, a small amount of cocoa powder, buttermilk, red food color, vinegar, butter, sugar, eggs (or eggless alternative), cream cheese frosting.
+How it's made: A soft, cocoa-tinted red sponge is baked and layered with tangy cream cheese frosting.
+Notes: Recognizable by its deep red color and tangy, creamy frosting.
+
+--- Red Velvet with Chocolate ---
+Price (1 kg): ₹1200
+Price (500 g): ₹600
+Ingredients: Red velvet sponge (as above) plus chocolate ganache or chocolate cream, used alongside or instead of cream cheese frosting.
+How it's made: The classic red velvet sponge is layered with rich chocolate ganache or cream, combining the tangy red velvet base with chocolate flavor.
+Notes: A chocolate-forward twist on the classic red velvet.
+
+--- Chocolate Cake ---
+Price (1 kg): ₹700
+Price (500 g): ₹350
+Ingredients: Flour, cocoa powder, sugar, butter or oil, eggs (or eggless alternative), milk, chocolate ganache or chocolate buttercream.
+How it's made: A moist chocolate sponge is baked and layered with chocolate ganache or buttercream frosting.
+Notes: A rich, classic chocolate cake and one of the most popular base flavors.
+
+--- Choco Truffle Cake ---
+Price (1 kg): ₹1300
+Price (500 g): ₹650
+Ingredients: Chocolate sponge, dark chocolate ganache (cream plus dark chocolate), chocolate shavings.
+How it's made: Chocolate sponge is generously layered with a rich dark chocolate ganache ("truffle" cream), then finished with a glossy ganache coat and chocolate shavings.
+Notes: Denser and richer than a standard chocolate cake because of the ganache layers.
+
+--- Chocolate Overloaded Cake ---
+Price (1 kg): ₹1800
+Price (500 g): ₹900
+Ingredients: Chocolate sponge, chocolate ganache, chocolate chips, chocolate sauce/drip, brownie or chocolate truffle pieces, chocolate shavings.
+How it's made: Multiple chocolate elements (ganache, chips, drip, shavings, brownie bits) are combined on one cake for maximum chocolate intensity.
+Notes: The richest, most chocolate-dense option on the menu, for serious chocolate lovers.
+
+--- Butterscotch Cake ---
+Price (1 kg): ₹950
+Price (500 g): ₹500
+Ingredients: Vanilla sponge, butterscotch sauce, caramelized nut brittle/praline (cashew or almond), whipped cream.
+How it's made: Sponge is layered with butterscotch sauce and crushed praline, then finished with whipped cream and a praline crumble on top.
+Notes: Known for its caramel-like sweetness and crunchy praline bits; contains nuts.
+
+--- Black Currant Cake ---
+Price (1 kg): ₹900
+Price (500 g): ₹450
+Ingredients: Vanilla sponge, black currant compote/jam or flavored cream, whipped cream, purple-tinted frosting.
+How it's made: Sponge is layered with black currant flavored cream or compote, finished with whipped cream, often tinted purple to match the fruit flavor.
+Notes: A tangy-sweet fruity flavor.
+
+--- KitKat Cake ---
+Price (1 kg): ₹1500
+Price (500 g): ₹800
+Ingredients: Chocolate sponge, chocolate ganache or cream, KitKat chocolate wafer bars, chocolate gems/candy-coated chocolates.
+How it's made: Chocolate sponge is layered with cream or ganache, the sides are lined upright with KitKat bars, and the top is decorated with chocolate gems or candies.
+Notes: A favorite with kids for its playful, candy-loaded look; contains chocolate wafer and candy toppings.
+
+--- Nutella Ferrero Rocher Cake ---
+Price (1 kg): ₹2300
+Price (500 g): ₹1200
+Ingredients: Chocolate (often hazelnut-enriched) sponge, Nutella frosting and filling, chocolate ganache, chopped hazelnuts, whole Ferrero Rocher chocolates for topping.
+How it's made: Sponge is layered with Nutella filling, coated with Nutella-chocolate frosting and chopped hazelnuts, then topped and decorated with whole Ferrero Rocher chocolates.
+Notes: A premium item; contains hazelnuts/tree nuts — flag for nut-allergy customers.
+
+--- Pistachio Cake ---
+Price (1 kg): ₹900
+Price (500 g): ₹450
+Ingredients: Vanilla or pistachio-flavored sponge, pistachio paste/cream, crushed pistachios, whipped cream, light green-tinted frosting.
+How it's made: Sponge is flavored with pistachio cream/paste, finished with whipped cream and garnished with crushed pistachio nuts.
+Notes: Nutty flavor with a signature light green color; contains nuts.
+
+--- Rainbow Cake ---
+Price (1 kg): ₹1300
+Price (500 g): ₹650
+Ingredients: Vanilla sponge batter divided and colored with several bright food colors, whipped cream or buttercream frosting.
+How it's made: Vanilla batter is split and tinted in different vivid colors, baked as separate thin layers, then stacked and coated in white cream so the colorful layers show when sliced.
+Notes: Popular for birthdays and celebrations because of its colorful layered look.
+
+--- Lotus Biscoff Cake ---
+Price (1 kg): ₹1500
+Price (500 g): ₹750
+Ingredients: Vanilla or biscuit-flavored sponge (often with a touch of cinnamon), Biscoff (caramelized biscuit) spread, crushed Lotus Biscoff biscuits, whipped cream or buttercream.
+How it's made: Sponge is layered with Biscoff spread and cream, topped with crushed Lotus Biscoff biscuits, a Biscoff drizzle, and often a whole biscuit on top.
+Notes: Known for its warm, caramelized, cinnamon-spiced biscuit flavor.
+
+--- Nutella Hazelnut Cake ---
+Price (1 kg): ₹1800
+Price (500 g): ₹900
+Ingredients: Chocolate or vanilla sponge, Nutella filling/frosting, chopped roasted hazelnuts.
+How it's made: Sponge is layered with Nutella cream, coated in Nutella-based frosting, and finished with a generous garnish of chopped hazelnuts.
+Notes: Contains hazelnuts/tree nuts — flag for nut-allergy customers.
+
+--- Death by Chocolate Cake (Must Try) ---
+Price (1 kg): ₹2200
+Price (500 g): ₹1000
+Ingredients: Chocolate sponge, chocolate ganache, chocolate buttercream or mousse, chocolate chips, chocolate sauce drip, dark chocolate shavings or curls.
+How it's made: Several intense layers of chocolate sponge, ganache, and frosting are combined with a chocolate drip finish for an extremely rich, dense chocolate experience.
+Notes: One of the richest items on the menu; marked as a "must try."
+
+--- Nutella KitKat Truffle Cake ---
+Price (1 kg): ₹1800
+Price (500 g): ₹900
+Ingredients: Chocolate sponge, Nutella-chocolate truffle ganache, KitKat chocolate wafer bars, chopped hazelnuts or chocolate shavings.
+How it's made: Chocolate sponge is layered with a rich Nutella-chocolate ganache, with KitKat bars lining the sides and a hazelnut or chocolate garnish on top.
+Notes: Combines the crunch of KitKat with rich Nutella truffle filling; contains hazelnuts.
+
+--- Espresso (Coffee) Cake ---
+Price (1 kg): ₹900
+Price (500 g): ₹450
+Ingredients: Coffee-flavored sponge (made with brewed espresso or coffee essence), coffee-flavored buttercream or whipped cream, cocoa or coffee powder dusting.
+How it's made: Sponge is flavored with espresso/coffee, layered with coffee cream, and finished with a light dusting of cocoa or coffee powder.
+Notes: A mildly bitter, aromatic option popular with adults and coffee lovers.
+
+--- Rasamalai Cake (Must Try — Signature Item) ---
+Price (1 kg): ₹1100
+Price (500 g): ₹550
+Ingredients: Soft milk-soaked sponge, rabri/reduced sweetened milk (rasmalai "ras"), saffron and cardamom flavoring, chopped pistachios or almonds, pieces of rasmalai (chenna/cottage-cheese dumplings) as garnish.
+How it's made: A soft sponge is soaked in saffron-cardamom flavored sweet milk to capture the flavor of traditional rasmalai, layered with rabri-flavored cream, and garnished with chopped nuts and pieces of rasmalai.
+Notes: Our signature fusion dessert, combining the classic Indian sweet "Rasmalai" with cake; marked as a must-try.
+
+--- Rosemilk Cake (Must Try) ---
+Price (1 kg): ₹1100
+Price (500 g): ₹550
+Ingredients: Vanilla sponge, rose syrup/rose milk flavoring, fresh cream, rose essence, garnished with rose petals or pink-tinted cream, sometimes chopped pistachios.
+How it's made: Sponge is soaked in a rose-flavored milk syrup (inspired by the popular South Indian rose milk drink), layered with rose-flavored cream, and finished with pink/rose-tinted frosting and a floral garnish.
+Notes: A fusion dessert inspired by the popular South Indian rose milk drink; marked as a must-try.
+
+--- Strawberry Cake ---
+Price (1 kg): ₹800
+Price (500 g): ₹400
+Ingredients: Vanilla sponge, fresh strawberries or strawberry compote/purée, whipped cream, pink-tinted frosting.
+How it's made: Sponge is layered with strawberry compote/purée and whipped cream, finished with a light pink cream coat, often garnished with fresh strawberry slices.
+Notes: A fruity, light option popular for its fresh taste.
+
+=====================================================
+END OF DOCUMENT
+=====================================================
